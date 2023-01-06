@@ -94,3 +94,8 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>o', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>O', builtin.lsp_dynamic_workspace_symbols, {})

@@ -6,9 +6,9 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap("", "<Space>", "<Nop>",opts)
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n",
@@ -34,6 +34,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>n", ":bnext<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -67,4 +68,14 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- find files popup --
+keymap("n", "<C-p>", "<leader>f", opts )
+
+-- Disable the arrow keys
+keymap("n","<Left>","<NOP>", opts)
+keymap("n","<Right>","<NOP>", opts)
+keymap("n","<Up>","<NOP>", opts)
+keymap("n","<Down>","<NOP>", opts)
+
 
